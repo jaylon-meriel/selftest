@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>외로움·고립 자가진단 | 홍은종합사회복지관</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;background:#F4F6FA;font-family:'Pretendard','Noto Sans KR',-apple-system,sans-serif}
+.hidden{display:none!important}
+.banner{background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 60%,#3182CE 100%);padding:40px 20px 36px;text-align:center;color:#fff}
+.banner .org{font-size:13px;opacity:.8;font-weight:600;margin-bottom:6px}
+.banner .sub{font-size:12px;letter-spacing:3px;opacity:.6;font-weight:600;margin-bottom:8px}
+.banner h1{font-size:28px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.banner p{font-size:14px;opacity:.8;line-height:1.5}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 60px}
+.sec-title{background:#2B6CB0;color:#fff;padding:8px 18px;border-radius:8px;font-size:16px;font-weight:700;display:inline-block;margin-bottom:16px;margin-top:32px}
+.grp{background:#E8EDF5;border-radius:8px;padding:12px 16px;margin-bottom:12px;border-left:4px solid #2B6CB0}
+.grp-label{font-size:14px;font-weight:700;color:#2D3748}
+.grp-note{font-size:12px;color:#718096;margin-top:2px}
+.qc{background:#fff;border-radius:10px;padding:18px 20px;margin-bottom:10px;border:1.5px solid #E2E8F0;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:all .3s}
+.qc.ans{border-color:#BEE3F8}
+.qc.miss{border:2px solid #FC8181;box-shadow:0 0 0 3px rgba(252,129,129,.15)}
+.qn{min-width:32px;height:32px;border-radius:50%;background:#E2E8F0;color:#A0AEC0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;transition:all .3s}
+.qc.ans .qn{background:#2B6CB0;color:#fff}
+.qc.miss .qn{background:#FC8181;color:#fff}
+.qt{font-size:15px;font-weight:600;color:#2D3748;line-height:1.6;padding-top:4px}
+.qtop{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.opts{display:flex;gap:8px;flex-wrap:wrap;padding-left:46px}
+.opt{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;cursor:pointer;border:1.5px solid #E2E8F0;background:#FAFAFA;color:#4A5568;font-weight:500;font-size:13.5px;transition:all .15s;user-select:none}
+.opt.sel{border:2px solid #2B6CB0;background:#EBF4FF;color:#2B6CB0;font-weight:700}
+.rd{width:18px;height:18px;border-radius:50%;border:2px solid #CBD5E0;background:#fff;flex-shrink:0;transition:all .15s}
+.opt.sel .rd{border:5px solid #2B6CB0}
+.warn{padding-left:46px;margin-top:8px;font-size:12px;color:#E53E3E;font-weight:600}
+.sa{text-align:center;margin-top:36px}
+.bm{padding:16px 60px;border-radius:12px;border:none;background:#A0AEC0;color:#fff;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s;letter-spacing:1px}
+.bm.on{background:linear-gradient(135deg,#1A365D,#2B6CB0);box-shadow:0 4px 20px rgba(43,108,176,.3)}
+.cnt{font-size:12px;color:#A0AEC0;margin-top:8px}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rw{animation:fu .5s ease}
+.rh{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:20px}
+.rt{padding:32px 24px;text-align:center}
+.re{font-size:48px;margin-bottom:8px}
+.bg{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.bd{padding:5px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.rtg{font-size:26px;font-weight:800;color:#1A202C;margin-bottom:8px}
+.rs{font-size:16px;color:#333;line-height:1.6;font-weight:600;max-width:500px;margin:0 auto;padding:10px 16px;background:rgba(255,255,255,.7);border-radius:10px}
+.dc{background:#fff;border-radius:12px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.si{padding:14px 16px;border-radius:10px;margin-bottom:8px;border:1px solid #EDF2F7}
+.si:nth-child(odd){background:#F7FAFC}
+.sn{font-size:14px;font-weight:700;color:#2B6CB0;margin-bottom:4px}
+.sd{font-size:13px;color:#4A5568;line-height:1.6}
+.cb{margin-top:12px;padding:12px 16px;background:#EBF4FF;border-radius:10px;font-size:13px;color:#2B6CB0;line-height:1.6}
+.dis{font-size:12px;color:#A0AEC0;line-height:1.6;text-align:center;margin-bottom:20px;padding:0 12px}
+.br{display:flex;gap:12px;justify-content:center;padding-bottom:20px}
+.bh{padding:15px 40px;border-radius:12px;border:2px solid #2B6CB0;background:#fff;color:#2B6CB0;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+.brst{padding:15px 40px;border-radius:12px;border:none;background:linear-gradient(135deg,#1A365D,#2B6CB0);color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(43,108,176,.3);letter-spacing:1px}
+.pb{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px 16px;max-height:160px;overflow-y:auto;font-size:12px;color:#4A5568;line-height:1.7}
+.fi{width:100%;padding:10px 14px;border-radius:8px;border:1.5px solid #E2E8F0;font-size:14px;font-family:inherit;box-sizing:border-box;outline:none}
+.fi:focus{border-color:#2B6CB0}
+.fl{font-size:14px;font-weight:700;color:#2D3748;margin-bottom:6px;display:block}
+.fg{margin-bottom:16px}
+.cr{display:flex;gap:16px}
+.cl{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:#2D3748}
+.cx{width:20px;height:20px;border-radius:4px;border:2px solid #CBD5E0;background:#fff;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0}
+.cx.ck{border-color:#2B6CB0;background:#2B6CB0}
+.dw{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.db{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:#2D3748;padding:6px 12px;border-radius:8px;border:1.5px solid #E2E8F0;background:#FAFAFA;font-weight:500;transition:all .15s}
+.db.sel{border:2px solid #2B6CB0;background:#EBF4FF;font-weight:700}
+.dc2{width:16px;height:16px;border-radius:3px;border:2px solid #CBD5E0;background:#fff;display:flex;align-items:center;justify-content:center}
+.db.sel .dc2{border-color:#2B6CB0;background:#2B6CB0}
+.or{display:flex;align-items:center;gap:10px}
+.al{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:#2D3748;font-weight:600}
+.ab{width:22px;height:22px;border-radius:4px;border:2px solid #CBD5E0;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.ab.ck{border-color:#2B6CB0;background:#2B6CB0}
+.bs{width:100%;padding:15px 0;border-radius:12px;border:none;background:#CBD5E0;color:#999;font-size:16px;font-weight:700;cursor:default;font-family:inherit;transition:all .3s}
+.bs.on{background:linear-gradient(135deg,#1A365D,#2B6CB0);color:#fff;cursor:pointer;box-shadow:0 4px 15px rgba(43,108,176,.3)}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: 문항 -->
+<div id="page1">
+<div class="banner">
+  <div class="org">홍은종합사회복지관</div>
+  <div class="sub">고립·은둔 예방</div>
+  <h1>외로움·고립 자가진단</h1>
+  <p>각 항목에 대해 체크하여 결과를 확인해보세요.<br>자가진단 결과에 따라 도움이 필요하다고 판단된다면,<br>이를 인지하고 필요한 조치를 취하는 것이 중요합니다.</p>
+</div>
+<div class="wrap">
+
+  <div class="sec-title">관계 단절 상황</div>
+  <div class="grp"><div class="grp-label">✦ 외로움 관련</div><div class="grp-note">지난 4주간(한달)의 상황에 대한 질문입니다</div></div>
+
+  <div class="qc" id="q1"><div class="qtop"><span class="qn">1</span><span class="qt">나는 같이 있어 줄 사람이 부족하다고 자주 느낀다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(1,1,this)"><div class="rd"></div>거의 없다</div>
+    <div class="opt" onclick="sel(1,2,this)"><div class="rd"></div>조금 그렇다</div>
+    <div class="opt" onclick="sel(1,3,this)"><div class="rd"></div>자주 그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q2"><div class="qtop"><span class="qn">2</span><span class="qt">나는 혼자 남겨진 것 같다고 자주 느낀다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(2,1,this)"><div class="rd"></div>거의 없다</div>
+    <div class="opt" onclick="sel(2,2,this)"><div class="rd"></div>조금 그렇다</div>
+    <div class="opt" onclick="sel(2,3,this)"><div class="rd"></div>자주 그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q3"><div class="qtop"><span class="qn">3</span><span class="qt">나는 사람들 사이에서 고립되어 있다고 자주 느낀다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(3,1,this)"><div class="rd"></div>거의 없다</div>
+    <div class="opt" onclick="sel(3,2,this)"><div class="rd"></div>조금 그렇다</div>
+    <div class="opt" onclick="sel(3,3,this)"><div class="rd"></div>자주 그렇다</div>
+  </div></div>
+
+  <div class="grp"><div class="grp-label">✦ 사회적 고립 관련</div><div class="grp-note">도움 줄 사람은 가족, 친구, 이웃, 동료 및 공공기관·전문기관 담당자도 포함</div></div>
+
+  <div class="qc" id="q4"><div class="qtop"><span class="qn">4</span><span class="qt">나는 몸이 아파서 도움이 필요할 때 도움 줄 사람이 있다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(4,0,this)"><div class="rd"></div>있다</div>
+    <div class="opt" onclick="sel(4,1,this)"><div class="rd"></div>없다</div>
+  </div></div>
+
+  <div class="qc" id="q5"><div class="qtop"><span class="qn">5</span><span class="qt">나는 낙심하거나 우울해서 이야기 상대가 필요할 때 들어줄 사람이 있다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(5,0,this)"><div class="rd"></div>있다</div>
+    <div class="opt" onclick="sel(5,1,this)"><div class="rd"></div>없다</div>
+  </div></div>
+
+  <div class="sec-title">일상생활관리상황</div>
+  <div class="grp"><div class="grp-label">✦ 일상생활유지와 은둔·외출 관련</div><div class="grp-note">지난 4주간(한달)의 상황에 대한 질문입니다</div></div>
+
+  <div class="qc" id="q6"><div class="qtop"><span class="qn">6</span><span class="qt">개인위생과 집안 청소 등 관리가 되고 있다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(6,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(6,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q7"><div class="qtop"><span class="qn">7</span><span class="qt">끼니를 거르거나 폭식하지 않고 꾸준히 식사관리를 한다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(7,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(7,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q8"><div class="qtop"><span class="qn">8</span><span class="qt">생활비, 용돈을 계획하여 지출하며 공과금 등의 납부를 잘하고 있다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(8,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(8,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q9"><div class="qtop"><span class="qn">9</span><span class="qt">건강(신체적, 정신적) 문제가 있을 때 병원에 방문하고, 약을 잘 챙겨 먹는다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(9,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(9,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q10"><div class="qtop"><span class="qn">10</span><span class="qt">여가 시간에 혼자, 또는 누군가를 만나기 위해 외출한다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(10,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(10,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q11"><div class="qtop"><span class="qn">11</span><span class="qt">다른 사람과 직접 만나서 대화하는 등 교류에 어려움이 없다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(11,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(11,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="qc" id="q12"><div class="qtop"><span class="qn">12</span><span class="qt">일상생활이나 수면 패턴이 규칙적이다.</span></div><div class="opts">
+    <div class="opt" onclick="sel(12,1,this)"><div class="rd"></div>아니다</div>
+    <div class="opt" onclick="sel(12,0,this)"><div class="rd"></div>그렇다</div>
+  </div></div>
+
+  <div class="sa">
+    <div id="mm" class="hidden" style="font-size:13px;color:#E53E3E;margin-bottom:12px;font-weight:600"></div>
+    <button id="sb" class="bm" onclick="doSubmit()">나의 상태 확인하기</button>
+    <div id="ct" class="cnt">0/12 문항 응답 완료</div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 2: 결과 -->
+<div id="page2" class="hidden"></div>
+
+<!-- PAGE 3: 신청 -->
+<div id="page3" class="hidden"></div>
+
+<script>
+const A={};
+let FD={gender:'',dong:'',agreed:false};
+const DL=["홍은1동","홍은2동","홍제1동","홍제2동","홍제3동"];
+
+function sel(id,sc,el){
+  A[id]=sc;
+  const c=document.getElementById('q'+id);
+  c.classList.add('ans');c.classList.remove('miss');
+  const w=c.querySelector('.warn');if(w)w.remove();
+  c.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  const n=Object.keys(A).length;
+  document.getElementById('ct').textContent=n+'/12 문항 응답 완료';
+  document.getElementById('sb').classList.toggle('on',n===12);
+}
+
+function doSubmit(){
+  const ids=[1,2,3,4,5,6,7,8,9,10,11,12];
+  const ms=ids.filter(i=>A[i]===undefined);
+  if(ms.length){
+    document.getElementById('mm').textContent='⚠ 응답하지 않은 문항이 '+ms.length+'개 있습니다.';
+    document.getElementById('mm').classList.remove('hidden');
+    ms.forEach(i=>{const c=document.getElementById('q'+i);c.classList.add('miss');if(!c.querySelector('.warn')){const w=document.createElement('div');w.className='warn';w.textContent='⚠ 이 문항에 답해주세요';c.appendChild(w);}});
+    document.getElementById('q'+ms[0]).scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  document.getElementById('page1').classList.add('hidden');
+  showResult();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+function ev(){
+  const ls=[1,2,3].reduce((s,i)=>s+(A[i]||0),0);
+  const is=[4,5].reduce((s,i)=>s+(A[i]||0),0);
+  const dn=[6,7,8,9,10,11,12].reduce((s,i)=>s+(A[i]===1?1:0),0);
+  const rn=ls>=6&&is>=1,dh=dn>=2;
+  if(rn&&dh)return{cls:"일상위험 고립군",risk:"중위험군",tag:"서비스 연계 필요",color:"#DC3545",bg:"#FFF0F1",emoji:"🤝",simple:"사람들과의 관계도 어렵고, 일상생활도 혼자 감당하기 힘든 상태입니다.",detail:"혼자 해결하려 하지 마세요. 두 영역 모두에서 어려움이 확인되어 전문 서비스 연계가 필요합니다.",svcs:[{n:"사례관리사업",d:"복합적 어려움이 큰 분에게 주 1회 밀착 상담, 맞춤형 자원연계, 위기 시 긴급 개입을 제공합니다."},{n:"복지사각지대 발굴 돌봄사업",d:"고립·고독사 위험 가구를 찾아가 욕구에 맞는 맞춤형 돌봄을 지원합니다."},{n:"경로식당·도시락·밑반찬 배달",d:"결식 우려가 있는 어르신께 영양가 높은 식사를 정기적으로 제공합니다."},{n:"맞춤형 자원연계 (주거·심리·경제·건강)",d:"주거환경 개선, 심리상담, 경제지원, 건강관리 등 필요한 자원을 연결해 드립니다."},{n:"아름다운 동행가게 '별을 잇다'",d:"지역 상점과 고립가구를 연결하여 일상 속 관계와 나눔을 만들어 갑니다."}]};
+  if(rn)return{cls:"관계지원군",risk:"저위험군",tag:"관계 지원 필요",color:"#E8930C",bg:"#FFF8EC",emoji:"🌤",simple:"외로움을 자주 느끼고, 어려울 때 기댈 사람이 부족한 상태입니다.",detail:"사람들과 연결될 수 있는 기회를 만들어 보세요. 작은 모임이나 활동 참여가 큰 변화의 시작이 됩니다.",svcs:[{n:"중장년 사회적 관계망 소모임",d:"중장년 1인가구를 위한 정기 모임으로 이웃과 자연스럽게 관계를 맺을 수 있습니다."},{n:"주민관계망 이웃돌봄단",d:"이웃 돌봄활동에 함께 참여하며 지역 안에서 소속감과 연결감을 느낄 수 있습니다."},{n:"교육문화 프로그램",d:"복지관에서 운영하는 다양한 교육·문화·운동 프로그램에 참여할 수 있습니다."}]};
+  if(dh)return{cls:"일상지원군",risk:"저위험군",tag:"일상생활 지원 필요",color:"#E8930C",bg:"#FFF8EC",emoji:"🌤",simple:"식사, 건강관리, 외출 등 일상생활을 꾸려가는 데 어려움이 있는 상태입니다.",detail:"혼자서 감당하기 어려운 일상의 부분들을 함께 해결할 수 있도록 돌봄 서비스를 이용해 보세요.",svcs:[{n:"경로식당·도시락·밑반찬 배달",d:"결식 우려가 있는 어르신께 정기적으로 식사를 지원합니다."},{n:"맞춤형 자원연계 (주거환경·건강)",d:"주거환경 개선, 건강검진 연계 등 일상관리에 필요한 자원을 연결해 드립니다."},{n:"지역연계 건강돌봄 프로그램",d:"서대문보건소·서울여자간호대학교와 함께하는 건강돌봄서비스를 이용할 수 있습니다."},{n:"사례관리사업",d:"비교적 안정적이지만 도움이 필요한 분께 정기 상담과 서비스 연계를 제공합니다."}]};
+  return{cls:"양호",risk:"해당없음",tag:"양호",color:"#198754",bg:"#ECFDF5",emoji:"🌿",simple:"현재 사람들과의 관계도 괜찮고, 일상생활도 잘 유지하고 계십니다.",detail:"지금처럼 건강한 일상을 유지해 주세요. 가끔 자신의 상태를 점검해 보시는 것도 좋습니다.",svcs:[{n:"교육문화 프로그램",d:"복지관에서 운영하는 다양한 교육·문화·체육 프로그램에 참여해 보세요."}]};
+}
+
+function showResult(){
+  const r=ev();
+  let sh='';r.svcs.forEach(s=>{sh+=`<div class="si"><div class="sn">${s.n}</div><div class="sd">${s.d}</div></div>`;});
+  document.getElementById('page2').innerHTML=`
+  <div style="background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 60%,#3182CE 100%);padding:32px 20px 28px;text-align:center;color:#fff">
+    <div style="font-size:13px;opacity:.8;font-weight:600;margin-bottom:6px">홍은종합사회복지관</div>
+    <div style="font-size:12px;letter-spacing:3px;opacity:.6;font-weight:600;margin-bottom:8px">고립·은둔 예방</div>
+    <div style="font-size:24px;font-weight:800">자가진단 결과</div>
+  </div>
+  <div class="wrap"><div class="rw">
+    <div class="rh"><div class="rt" style="background:${r.bg};border-bottom:3px solid ${r.color}">
+      <div class="re">${r.emoji}</div>
+      <div class="bg"><span class="bd" style="background:${r.color}20;color:${r.color};border:1px solid ${r.color}40">${r.cls}</span><span class="bd" style="background:#F1F1F1;color:#555">${r.risk}</span></div>
+      <div class="rtg">${r.tag}</div>
+      <div class="rs">${r.simple}</div>
+    </div></div>
+    <div class="dc" style="border-left:5px solid ${r.color}"><div style="font-size:15px;font-weight:700;color:${r.color};margin-bottom:8px">💬 맞춤 안내</div><div style="font-size:14px;color:#4A5568;line-height:1.75">${r.detail}</div></div>
+    <div class="dc"><div style="font-size:15px;font-weight:700;color:#2D3748;margin-bottom:4px">🏠 홍은종합사회복지관 이용 가능 서비스</div><div style="font-size:12px;color:#999;margin-bottom:16px">진단 결과에 따라 이용하실 수 있는 복지관 서비스입니다.</div>${sh}<div class="cb">📍 서울 서대문구 세검정로 1길 116<br>📞 02-395-3959 / 02-391-2381~2<br>🌐 <u>www.hwelfare.or.kr</u></div></div>
+    <div class="dis">※ 본 자가진단은 서울시 고립예방 플랫폼 '똑똑'의 외로움·고립 자가진단 도구를 참고하여 제작되었습니다.<br>전문적인 진단을 대체하지 않으며, 필요시 전문기관 상담을 권장합니다.</div>
+    <div class="br"><button id="hb" class="bh" onclick="goHelp()">도움받기</button><button class="brst" onclick="goReset()">다시 검진하기</button></div>
+  </div></div>`;
+  document.getElementById('page2').classList.remove('hidden');
+}
+
+function goHelp(){
+  document.getElementById('page2').classList.add('hidden');
+  const db=DL.map(d=>`<div class="db" onclick="sDong('${d}',this)"><div class="dc2"></div>서대문구 ${d}</div>`).join('');
+  document.getElementById('page3').innerHTML=`
+  <div style="background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 60%,#3182CE 100%);padding:32px 20px 28px;text-align:center;color:#fff">
+    <div style="font-size:13px;opacity:.8;font-weight:600;margin-bottom:6px">홍은종합사회복지관</div>
+    <div style="font-size:12px;letter-spacing:3px;opacity:.6;font-weight:600;margin-bottom:8px">고립·은둔 예방</div>
+    <div style="font-size:24px;font-weight:800">도움받기 신청</div>
+  </div>
+  <div class="wrap" style="padding-top:24px">
+    <div style="margin-bottom:20px"><div style="font-size:13px;font-weight:700;color:#DC3545;margin-bottom:8px">■ 개인정보처리방침</div>
+    <div class="pb">홍은종합사회복지관(이하 "복지관")은 「개인정보 보호법」 제15조, 제17조, 제22조에 따라 아래와 같이 개인정보를 수집·이용합니다.<br><br><b>1. 수집 목적</b><br>자가진단 결과에 따른 사회복지서비스 안내 및 연계, 사후관리<br><br><b>2. 수집 항목</b><br>이름, 휴대전화번호, 성별, 출생년도, 거주지, 자가진단 응답 내용<br><br><b>3. 보유 및 이용 기간</b><br>수집일로부터 3년간 보유하며, 목적 달성 후 지체 없이 파기합니다. 단, 관련 법령에 따른 보존이 필요한 경우 해당 기간까지 보유합니다.<br><br><b>4. 제3자 제공</b><br>서울특별시, 서대문구청, 서울시복지재단 등 사회복지서비스 제공에 필요한 기관에 한하여 제공될 수 있습니다.<br><br><b>5. 동의 거부 권리</b><br>귀하는 개인정보 수집·이용에 동의하지 않을 권리가 있습니다. 다만, 동의를 거부할 경우 서비스 신청 및 연계가 제한될 수 있습니다.<br><br><b>6. 개인정보 처리 책임자</b><br>홍은종합사회복지관 (☎ 02-395-3959)</div></div>
+    <div class="fg"><label class="fl">■ 이름</label><input type="text" id="fN" class="fi" placeholder="이름을 입력해 주세요" oninput="chk()"></div>
+    <div class="fg"><label class="fl">■ 휴대전화번호</label><input type="tel" id="fP" class="fi" placeholder="예: 010-1234-5678" oninput="chk()"></div>
+    <div class="fg"><label class="fl">■ 성별</label><div class="cr"><div class="cl" onclick="sG('남자')"><div class="cx" id="gM"></div>남자</div><div class="cl" onclick="sG('여자')"><div class="cx" id="gF"></div>여자</div></div></div>
+    <div class="fg"><label class="fl">■ 출생년도</label><input type="text" id="fB" class="fi" placeholder="예: 1965" maxlength="4" style="width:160px" oninput="chk()"></div>
+    <div class="fg" style="margin-bottom:20px"><label class="fl">■ 거주지</label><div class="dw">${db}</div><div class="or"><div class="db" id="dO" onclick="sDong('기타',this)"><div class="dc2"></div>그 외 지역</div><input type="text" id="fO" class="fi hidden" placeholder="거주 지역을 입력해 주세요" style="flex:1" oninput="chk()"></div></div>
+    <div style="margin-bottom:20px"><div class="al" onclick="tA()"><div class="ab" id="aB"></div>개인정보처리방침에 동의합니다.</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px;padding-bottom:40px"><button id="fsb" class="bs" onclick="fSub()">신청하기</button><button class="bh" style="width:100%;padding:13px 0" onclick="goBack()">← 결과 화면으로 돌아가기</button></div>
+  </div>`;
+  document.getElementById('page3').classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+function sG(g){FD.gender=g;document.getElementById('gM').className='cx'+(g==='남자'?' ck':'');document.getElementById('gF').className='cx'+(g==='여자'?' ck':'');chk();}
+function sDong(d,el){FD.dong=d;document.querySelectorAll('.db').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');const o=document.getElementById('fO');if(d==='기타'){o.classList.remove('hidden');}else{o.classList.add('hidden');o.value='';}chk();}
+function tA(){FD.agreed=!FD.agreed;document.getElementById('aB').className='ab'+(FD.agreed?' ck':'');chk();}
+function chk(){
+  const n=(document.getElementById('fN')?.value||'').trim();
+  const p=(document.getElementById('fP')?.value||'').trim();
+  const b=(document.getElementById('fB')?.value||'').trim();
+  const o=(document.getElementById('fO')?.value||'').trim();
+  const hd=FD.dong&&(FD.dong!=='기타'||o);
+  const ok=n&&p&&FD.gender&&b&&hd&&FD.agreed;
+  const btn=document.getElementById('fsb');if(btn)btn.className='bs'+(ok?' on':'');
+}
+function fSub(){
+  const n=(document.getElementById('fN')?.value||'').trim();
+  const p=(document.getElementById('fP')?.value||'').trim();
+  const b=(document.getElementById('fB')?.value||'').trim();
+  const o=(document.getElementById('fO')?.value||'').trim();
+  const hd=FD.dong&&(FD.dong!=='기타'||o);
+  if(!(n&&p&&FD.gender&&b&&hd&&FD.agreed))return;
+  document.getElementById('page3').innerHTML='';document.getElementById('page3').classList.add('hidden');
+  document.getElementById('page2').classList.remove('hidden');
+  const hb=document.getElementById('hb');if(hb){hb.textContent='✓ 신청 완료';hb.disabled=true;hb.style.opacity='.5';hb.style.cursor='default';hb.onclick=null;}
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function goBack(){
+  document.getElementById('page3').innerHTML='';document.getElementById('page3').classList.add('hidden');
+  document.getElementById('page2').classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function goReset(){
+  for(let k in A)delete A[k];FD={gender:'',dong:'',agreed:false};
+  document.getElementById('page2').innerHTML='';document.getElementById('page2').classList.add('hidden');
+  document.getElementById('page3').innerHTML='';document.getElementById('page3').classList.add('hidden');
+  document.getElementById('page1').classList.remove('hidden');
+  document.querySelectorAll('.qc').forEach(c=>{c.classList.remove('ans','miss');c.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));const w=c.querySelector('.warn');if(w)w.remove();});
+  document.querySelectorAll('.qn').forEach(n=>{n.style.background='';n.style.color='';});
+  document.getElementById('ct').textContent='0/12 문항 응답 완료';
+  document.getElementById('sb').classList.remove('on');
+  document.getElementById('mm').classList.add('hidden');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+</script>
+</body>
+</html>
